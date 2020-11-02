@@ -7,11 +7,7 @@ const downloadAndPlay = (uri) => {
   const file = fs.createWriteStream('./audio.mp3');
   https.get(uri, res => {
     res.pipe(file);
-    file.on('finish', () => {
-      setTimeout(() => {
-        play('./audio.mp3');
-      }, 300);
-    });
+    file.on('finish', () => play('./audio.mp3'));
   });
 };
 
