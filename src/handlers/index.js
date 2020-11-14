@@ -15,7 +15,16 @@ const stopAudioHandler = () => {
   audio.stop();
 };
 
+const muteHandler = () => {
+  audio.stop();
+
+  while(queue.length) {
+    queue.pop()
+  }
+}
+
 module.exports = {
+  muteHandler,
   playAudioHandler,
   stopAudioHandler,
 };

@@ -19,4 +19,12 @@ socket.on('PLAY_AUDIO', data => {
   }
 });
 
+socket.on('MUTE', data => {
+  try {
+    handlers.muteHandler();
+  } catch(e) {
+    console.log('PLAY_AUDIO handler error', e);
+  }
+});
+
 module.exports = app;
